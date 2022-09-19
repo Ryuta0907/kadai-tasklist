@@ -1,3 +1,4 @@
+
 package controllers;
 
 import java.io.IOException;
@@ -24,7 +25,6 @@ public class DestroyServlet extends HttpServlet {
      */
     public DestroyServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -45,13 +45,10 @@ public class DestroyServlet extends HttpServlet {
             em.close();
 
             // セッションスコープ上の不要になったデータを削除
-            request.getSession().removeAttribute("task_id");
+            request.getSession().removeAttribute("message_id");
 
             // indexページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/index");
-
-
         }
-        }
-
+    }
 }
